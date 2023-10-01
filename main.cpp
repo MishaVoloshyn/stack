@@ -37,7 +37,7 @@ void Stack::Clear()
 char Stack::Top()
 {
 	if (Empty()) {
-		cout << "Стек пуст." << endl;
+		cout << "Stack Empty" << endl;
 		return '\0';
 	}
 	return st[top];
@@ -77,7 +77,7 @@ bool Stack::Check(Stack S, string user)
 		case ')':
 			if (S.Empty() || S.Top() != c)			
 			{
-				cout << "error";						
+				cout << "Error";						
 				return false;
 			}
 			S.Pop();									
@@ -86,7 +86,7 @@ bool Stack::Check(Stack S, string user)
 		case '}':
 			if (S.Empty() || S.Top() != c)
 			{
-				cout << "error";
+				cout << "Error";
 				return false;
 			}
 			S.Pop();
@@ -94,14 +94,14 @@ bool Stack::Check(Stack S, string user)
 		case ']':
 			if (S.Empty() || S.Top() != c)
 			{
-				cout << "error";
+				cout << "Error";
 				return false;
 			}
 			S.Pop();
 			break;
 		}
 	}
-	cout << "All is correct!" << endl;
+	cout << "All Good!" << endl;
 	return true;
 }
 
@@ -118,7 +118,7 @@ void Stack::Push(char c)
 		st[++top] = c;
 	}
 	else {
-		cout << "Стек переполнен." << endl;
+		cout << "Stack Overflow" << endl;
 	}
 }
 
@@ -128,7 +128,7 @@ char Stack::Pop()
 		return st[top--];
 	}
 	else {
-		cout << "Стек пуст." << endl;
+		cout << "Stack Empty" << endl;
 		return '\0';
 	}
 }
@@ -139,7 +139,7 @@ int main()
 	srand(time(0));
 	Stack S;
 	string user;					
-	cout << "Enter string: ";
+	cout << "Enter str: ";
 	getline(cin, user);
 	S.Check(S, user);
 
